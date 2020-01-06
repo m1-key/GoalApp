@@ -1,0 +1,26 @@
+import React from "react";
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+
+const GoalItem = props => {
+    return (
+        <TouchableOpacity onPress={props.onDelete.bind(this,props.index)}>
+            <View style={styles.text} 
+                key={props.index} >
+            <Text>{props.title}</Text>
+        </View>
+        </TouchableOpacity>
+        
+    );
+};
+
+const styles = StyleSheet.create({
+    text: {     
+        padding: 10,
+        margin: 10,
+        backgroundColor: "#ccc",
+        borderColor: "black",
+        borderWidth: 1
+    }
+});
+
+export default GoalItem;
